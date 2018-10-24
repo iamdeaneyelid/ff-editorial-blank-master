@@ -119,6 +119,7 @@ gulp.task('serve', gulp.series('clean', gulp.series('html-tmp','assets','javascr
     });
     gulp.watch('./src/js/**/**.js', gulp.parallel('javascript')).on('change', browserSync.reload);
     gulp.watch('./src/css/*.scss', gulp.parallel('sass'));
+    gulp.watch('./src/assets/*').on('change', browserSync.reload);
     gulp.watch(['./src/**/*.pug','./src/_data/*.json'], gulp.parallel('html-tmp'));
 })));
 
